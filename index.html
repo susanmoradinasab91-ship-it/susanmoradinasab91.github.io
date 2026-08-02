@@ -1,0 +1,460 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Susan Moradinasab — Biomedical Engineering PhD</title>
+<meta name="description" content="Susan Moradinasab, PhD candidate in Biomedical & Chemical Engineering at Syracuse University, studying trophoblast-derived extracellular vesicles and their immunomodulatory properties.">
+<meta property="og:title" content="Susan Moradinasab">
+<meta property="og:description" content="PhD candidate studying trophoblast-derived extracellular vesicles and reproductive immunology at Syracuse University.">
+<meta property="og:type" content="website">
+<meta property="og:url" content="https://susan-mo.com/">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght@9..144,300;9..144,400;9..144,500;9..144,600;9..144,700&family=Inter:wght@300;400;500;600&family=IBM+Plex+Mono:wght@400;500&display=swap" rel="stylesheet">
+<style>
+:root{
+  --ink:#12161c;
+  --paper:#f6f4ef;
+  --paper-2:#efece4;
+  --line:#d9d4c8;
+  --muted:#6b7280;
+  --accent:#3d6b5e;        /* deep phyto-green */
+  --accent-2:#a8563e;      /* clay */
+  --vesicle:#c9d8cf;
+  --display:'Fraunces',Georgia,serif;
+  --body:'Inter',system-ui,sans-serif;
+  --mono:'IBM Plex Mono',monospace;
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth}
+body{
+  font-family:var(--body);
+  background:var(--paper);
+  color:var(--ink);
+  line-height:1.6;
+  -webkit-font-smoothing:antialiased;
+  overflow-x:hidden;
+}
+a{color:inherit;text-decoration:none}
+img{max-width:100%;display:block}
+.wrap{max-width:1080px;margin:0 auto;padding:0 28px}
+.eyebrow{
+  font-family:var(--mono);
+  font-size:.72rem;
+  letter-spacing:.22em;
+  text-transform:uppercase;
+  color:var(--accent);
+  display:inline-block;
+  margin-bottom:1rem;
+}
+
+/* NAV */
+header.nav{
+  position:sticky;top:0;z-index:50;
+  background:rgba(246,244,239,.82);
+  backdrop-filter:blur(10px);
+  border-bottom:1px solid var(--line);
+}
+.nav-inner{display:flex;align-items:center;justify-content:space-between;height:66px}
+.brand{font-family:var(--display);font-weight:600;font-size:1.15rem;letter-spacing:-.01em}
+.brand span{color:var(--accent)}
+nav ul{display:flex;gap:30px;list-style:none}
+nav a{font-size:.9rem;color:var(--muted);transition:color .2s}
+nav a:hover{color:var(--ink)}
+.nav-toggle{display:none;background:none;border:none;font-size:1.5rem;cursor:pointer}
+
+/* HERO */
+.hero{position:relative;padding:96px 0 84px;overflow:hidden}
+.hero-grid{display:grid;grid-template-columns:1.35fr .9fr;gap:56px;align-items:center}
+.hero h1{
+  font-family:var(--display);
+  font-weight:400;
+  font-size:clamp(2.6rem,6vw,4.3rem);
+  line-height:1.02;
+  letter-spacing:-.02em;
+  margin-bottom:.4rem;
+}
+.hero h1 em{font-style:italic;color:var(--accent)}
+.hero .role{
+  font-family:var(--mono);
+  font-size:.82rem;
+  letter-spacing:.14em;
+  text-transform:uppercase;
+  color:var(--accent-2);
+  margin:1.1rem 0 1.4rem;
+}
+.hero p.lede{font-size:1.08rem;color:#3a4048;max-width:46ch;margin-bottom:2rem}
+.hero-cta{display:flex;gap:14px;flex-wrap:wrap}
+.btn{
+  font-size:.9rem;font-weight:500;
+  padding:.72rem 1.4rem;border-radius:2px;
+  border:1px solid var(--ink);
+  transition:all .2s;
+}
+.btn-solid{background:var(--ink);color:var(--paper)}
+.btn-solid:hover{background:var(--accent);border-color:var(--accent)}
+.btn-ghost:hover{background:var(--ink);color:var(--paper)}
+
+/* vesicle portrait ring */
+.portrait{position:relative;width:100%;max-width:320px;margin:0 auto;aspect-ratio:1}
+.portrait .disc{
+  position:absolute;inset:0;border-radius:50%;
+  background:radial-gradient(circle at 35% 30%, #ffffff 0%, var(--vesicle) 55%, #b6c8bd 100%);
+  border:1px solid var(--line);
+  overflow:hidden;
+  display:flex;align-items:flex-end;justify-content:center;
+}
+.portrait .disc span{
+  font-family:var(--display);font-size:4.5rem;color:var(--accent);
+  opacity:.35;padding-bottom:.4rem;
+}
+.portrait svg{position:absolute;inset:-6%;width:112%;height:112%;animation:spin 46s linear infinite;pointer-events:none}
+@keyframes spin{to{transform:rotate(360deg)}}
+@media(prefers-reduced-motion:reduce){.portrait svg{animation:none}}
+
+/* SECTION SCAFFOLD */
+section{padding:84px 0;border-top:1px solid var(--line)}
+.sec-head{max-width:60ch;margin-bottom:52px}
+.sec-head h2{font-family:var(--display);font-weight:400;font-size:clamp(1.8rem,4vw,2.7rem);letter-spacing:-.01em;line-height:1.1}
+.sec-head p{color:var(--muted);margin-top:.8rem;font-size:1.02rem}
+
+/* RESEARCH */
+.research-grid{display:grid;grid-template-columns:repeat(2,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.rcard{background:var(--paper);padding:34px 30px;transition:background .25s}
+.rcard:hover{background:var(--paper-2)}
+.rcard .num{font-family:var(--mono);font-size:.75rem;color:var(--accent);letter-spacing:.1em}
+.rcard h3{font-family:var(--display);font-weight:500;font-size:1.28rem;margin:.7rem 0 .55rem;line-height:1.2}
+.rcard p{font-size:.95rem;color:#4a505a}
+
+/* ABOUT */
+.about-grid{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.about-grid p{margin-bottom:1.1rem;color:#3a4048}
+.about-grid p.lead{font-family:var(--display);font-size:1.3rem;line-height:1.4;color:var(--ink)}
+.facts{border-left:2px solid var(--accent);padding-left:22px}
+.fact{margin-bottom:1.4rem}
+.fact .k{font-family:var(--mono);font-size:.72rem;letter-spacing:.14em;text-transform:uppercase;color:var(--muted)}
+.fact .v{font-size:1.02rem;font-weight:500;margin-top:.15rem}
+
+/* TIMELINE */
+.tl{display:grid;grid-template-columns:1fr 1fr;gap:56px}
+.tl h3{font-family:var(--mono);font-size:.76rem;letter-spacing:.16em;text-transform:uppercase;color:var(--accent);margin-bottom:1.6rem}
+.tl-item{padding:0 0 1.5rem 22px;border-left:1px solid var(--line);position:relative}
+.tl-item:last-child{padding-bottom:0}
+.tl-item::before{content:"";position:absolute;left:-5px;top:6px;width:9px;height:9px;border-radius:50%;background:var(--accent)}
+.tl-item .date{font-family:var(--mono);font-size:.74rem;color:var(--muted)}
+.tl-item .title{font-weight:600;margin:.15rem 0}
+.tl-item .place{font-size:.92rem;color:#4a505a}
+
+/* SKILLS */
+.chips{display:flex;flex-wrap:wrap;gap:10px}
+.chip{
+  font-family:var(--mono);font-size:.8rem;
+  padding:.5rem .9rem;background:var(--paper-2);
+  border:1px solid var(--line);border-radius:2px;color:#3a4048;
+}
+.skill-cols{display:grid;grid-template-columns:repeat(3,1fr);gap:40px}
+.skill-cols h4{font-family:var(--mono);font-size:.74rem;letter-spacing:.14em;text-transform:uppercase;color:var(--accent);margin-bottom:1rem}
+
+/* STATS */
+.stats{display:grid;grid-template-columns:repeat(4,1fr);gap:1px;background:var(--line);border:1px solid var(--line)}
+.stat{background:var(--paper);padding:36px 24px;text-align:center}
+.stat .n{font-family:var(--display);font-size:2.8rem;font-weight:500;color:var(--accent);line-height:1}
+.stat .l{font-family:var(--mono);font-size:.72rem;letter-spacing:.12em;text-transform:uppercase;color:var(--muted);margin-top:.6rem}
+
+/* PUBLICATIONS */
+.pub{padding:24px 0;border-bottom:1px solid var(--line);display:grid;grid-template-columns:auto 1fr;gap:24px;align-items:baseline}
+.pub:last-child{border-bottom:none}
+.pub .yr{font-family:var(--mono);font-size:.85rem;color:var(--accent)}
+.pub .t{font-weight:500;line-height:1.4}
+.pub .m{font-size:.9rem;color:var(--muted);margin-top:.25rem}
+
+/* CONTACT */
+.contact{background:var(--ink);color:var(--paper);border:none}
+.contact .wrap{text-align:center}
+.contact h2{font-family:var(--display);font-weight:400;font-size:clamp(2.2rem,6vw,4rem);line-height:1.05;margin-bottom:1.2rem}
+.contact h2 em{font-style:italic;color:var(--vesicle)}
+.contact p{color:#b8bcc2;max-width:44ch;margin:0 auto 2rem}
+.socials{display:flex;gap:14px;justify-content:center;flex-wrap:wrap;margin-top:2.4rem}
+.socials a{
+  font-family:var(--mono);font-size:.82rem;
+  padding:.6rem 1.1rem;border:1px solid #3a4048;border-radius:2px;
+  color:var(--paper);transition:all .2s;
+}
+.socials a:hover{background:var(--paper);color:var(--ink);border-color:var(--paper)}
+.mailbtn{
+  display:inline-block;font-size:.95rem;font-weight:500;
+  padding:.8rem 1.8rem;background:var(--paper);color:var(--ink);border-radius:2px;
+}
+.mailbtn:hover{background:var(--vesicle)}
+footer.foot{background:var(--ink);color:#8b9098;padding:28px 0;text-align:center;font-size:.82rem;border-top:1px solid #2a2f36}
+
+@media(max-width:820px){
+  .hero-grid,.about-grid,.tl,.research-grid,.skill-cols{grid-template-columns:1fr}
+  .stats{grid-template-columns:repeat(2,1fr)}
+  .portrait{max-width:240px;margin-top:12px}
+  nav ul{display:none;position:absolute;top:66px;left:0;right:0;background:var(--paper);flex-direction:column;gap:0;padding:12px 28px;border-bottom:1px solid var(--line)}
+  nav ul.open{display:flex}
+  nav ul li{padding:10px 0;border-bottom:1px solid var(--line)}
+  .nav-toggle{display:block}
+}
+</style>
+</head>
+<body>
+
+<header class="nav">
+  <div class="wrap nav-inner">
+    <div class="brand">Susan <span>Moradinasab</span></div>
+    <nav>
+      <button class="nav-toggle" aria-label="Menu" onclick="document.getElementById('menu').classList.toggle('open')">☰</button>
+      <ul id="menu">
+        <li><a href="#research">Research</a></li>
+        <li><a href="#about">About</a></li>
+        <li><a href="#experience">Experience</a></li>
+        <li><a href="#publications">Publications</a></li>
+        <li><a href="#contact">Contact</a></li>
+      </ul>
+    </nav>
+  </div>
+</header>
+
+<!-- HERO -->
+<section class="hero" style="border-top:none">
+  <div class="wrap hero-grid">
+    <div>
+      <span class="eyebrow">Reproductive Immunology · Extracellular Vesicles</span>
+      <h1>Reading the <em>messages</em> cells send.</h1>
+      <div class="role">PhD Candidate — Biomedical &amp; Chemical Engineering, Syracuse University</div>
+      <p class="lede">I study trophoblast-derived extracellular vesicles and how their molecular cargo shapes maternal immune tolerance — bridging clinical laboratory science and engineered stem-cell models.</p>
+      <div class="hero-cta">
+        <a href="#research" class="btn btn-solid">Explore research</a>
+        <a href="#contact" class="btn btn-ghost">Get in touch</a>
+      </div>
+    </div>
+    <div class="portrait">
+      <svg viewBox="0 0 200 200" aria-hidden="true">
+        <circle cx="100" cy="100" r="96" fill="none" stroke="#c9d8cf" stroke-width="1" stroke-dasharray="2 6"/>
+        <circle cx="100" cy="4" r="4" fill="#3d6b5e"/>
+        <circle cx="196" cy="100" r="3" fill="#a8563e"/>
+        <circle cx="100" cy="196" r="3.5" fill="#3d6b5e"/>
+        <circle cx="4" cy="100" r="3" fill="#a8563e"/>
+      </svg>
+      <div class="disc"><span>SM</span></div>
+    </div>
+  </div>
+</section>
+
+<!-- RESEARCH -->
+<section id="research">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Research Focus</span>
+      <h2>How the placenta talks to the immune system.</h2>
+      <p>My work profiles the cargo of lineage-specific trophoblast EVs and tests their immunomodulatory function in engineered models of the maternal–fetal interface.</p>
+    </div>
+    <div class="research-grid">
+      <div class="rcard">
+        <div class="num">01</div>
+        <h3>Trophoblast EV Immunomodulation</h3>
+        <p>Isolating extracellular vesicles from iPSC-derived trophoblast lineages (TSC, CT, STB, EVT) and mapping how their cargo reprograms NK cells, macrophages, and T-cell responses.</p>
+      </div>
+      <div class="rcard">
+        <div class="num">02</div>
+        <h3>Multi-omics EV Cargo Profiling</h3>
+        <p>Integrating miRNA-seq and DIA-LC-MS/MS proteomics to resolve lineage-specific vesicle signatures — including C19MC cluster miRNAs linked to immune tolerance.</p>
+      </div>
+      <div class="rcard">
+        <div class="num">03</div>
+        <h3>Engineered Trophoblast Models</h3>
+        <p>Building iPSC-derived trophoblast organoid and stem-cell systems to study placentation and vesicle biogenesis under defined, reproducible conditions.</p>
+      </div>
+      <div class="rcard">
+        <div class="num">04</div>
+        <h3>Therapeutic EV Engineering</h3>
+        <p>Exploring MSC- and trophoblast-derived vesicles as cell-free immunomodulatory platforms, characterized to MISEV2023 standards.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section id="about">
+  <div class="wrap">
+    <div class="about-grid">
+      <div>
+        <span class="eyebrow">About</span>
+        <p class="lead">I came to bioengineering through the clinical lab — and I never stopped asking what cells are trying to say to one another.</p>
+        <p>I am a PhD candidate in Dr. Zhen Ma's lab at the BioInspired Syracuse Institute for Materials and Living Systems, where my dissertation investigates trophoblast-derived extracellular vesicles and their role in maternal–fetal immune tolerance.</p>
+        <p>My path began in Iran with a BS in Medical Laboratory Science and an MS in Hematology, grounding me in clinical and hematological science before I moved into stem-cell engineering and vesicle biology. That combination shapes how I work: rigorous at the bench, and always oriented toward translational impact.</p>
+        <p>My current project is supported by an NSF NRT EmIRGE-Bio Seed Grant, profiling iPSC-derived trophoblast EV cargo through integrated proteomics and transcriptomics.</p>
+      </div>
+      <div class="facts">
+        <div class="fact"><div class="k">Position</div><div class="v">PhD Candidate, Biomedical &amp; Chemical Engineering</div></div>
+        <div class="fact"><div class="k">Institution</div><div class="v">Syracuse University</div></div>
+        <div class="fact"><div class="k">Lab</div><div class="v">Dr. Zhen Ma — BioInspired Institute</div></div>
+        <div class="fact"><div class="k">Funding</div><div class="v">NSF NRT EmIRGE-Bio Seed Grant (2026)</div></div>
+        <div class="fact"><div class="k">Focus</div><div class="v">Extracellular vesicles · Reproductive immunology</div></div>
+        <div class="fact"><div class="k">Languages</div><div class="v">English · Persian</div></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- EXPERIENCE / EDUCATION -->
+<section id="experience">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Trajectory</span>
+      <h2>Education &amp; research experience.</h2>
+    </div>
+    <div class="tl">
+      <div>
+        <h3>Education</h3>
+        <div class="tl-item">
+          <div class="date">2022 — Present</div>
+          <div class="title">PhD, Biomedical &amp; Chemical Engineering</div>
+          <div class="place">Syracuse University, USA</div>
+        </div>
+        <div class="tl-item">
+          <div class="date">Iran</div>
+          <div class="title">MS, Hematology</div>
+          <div class="place">Clinical &amp; laboratory hematological science</div>
+        </div>
+        <div class="tl-item">
+          <div class="date">Iran</div>
+          <div class="title">BS, Medical Laboratory Science</div>
+          <div class="place">Foundations in clinical diagnostics</div>
+        </div>
+      </div>
+      <div>
+        <h3>Research</h3>
+        <div class="tl-item">
+          <div class="date">2022 — Present</div>
+          <div class="title">Graduate Researcher, Ma Lab</div>
+          <div class="place">Trophoblast EVs &amp; maternal–fetal immunology</div>
+        </div>
+        <div class="tl-item">
+          <div class="date">2026</div>
+          <div class="title">NSF NRT EmIRGE-Bio Seed Grant</div>
+          <div class="place">iPSC-derived trophoblast EV cargo profiling</div>
+        </div>
+        <div class="tl-item">
+          <div class="date">2019 — 2022</div>
+          <div class="title">Author, 4 peer-reviewed publications</div>
+          <div class="place">Hematology &amp; laboratory science</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SKILLS -->
+<section id="skills">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Toolkit</span>
+      <h2>Techniques at the bench.</h2>
+    </div>
+    <div class="skill-cols">
+      <div>
+        <h4>Cell &amp; EV Biology</h4>
+        <div class="chips">
+          <span class="chip">iPSC culture</span>
+          <span class="chip">Trophoblast differentiation</span>
+          <span class="chip">EV isolation</span>
+          <span class="chip">NTA / ZetaView</span>
+          <span class="chip">Immunomagnetic isolation</span>
+        </div>
+      </div>
+      <div>
+        <h4>Molecular &amp; Analytical</h4>
+        <div class="chips">
+          <span class="chip">RT-qPCR</span>
+          <span class="chip">Western blot</span>
+          <span class="chip">ELISA</span>
+          <span class="chip">Flow cytometry</span>
+          <span class="chip">BCA assay</span>
+        </div>
+      </div>
+      <div>
+        <h4>Omics &amp; Analysis</h4>
+        <div class="chips">
+          <span class="chip">DIA-LC-MS/MS</span>
+          <span class="chip">miRNA-seq</span>
+          <span class="chip">RNA-seq</span>
+          <span class="chip">Proteomics</span>
+          <span class="chip">Python data viz</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- STATS -->
+<section id="stats" style="padding-top:0;border-top:none">
+  <div class="wrap">
+    <div class="stats">
+      <div class="stat"><div class="n">4</div><div class="l">Publications</div></div>
+      <div class="stat"><div class="n">4</div><div class="l">EV Lineages Profiled</div></div>
+      <div class="stat"><div class="n">2</div><div class="l">Omics Platforms</div></div>
+      <div class="stat"><div class="n">1</div><div class="l">NSF Seed Grant</div></div>
+    </div>
+  </div>
+</section>
+
+<!-- PUBLICATIONS -->
+<section id="publications">
+  <div class="wrap">
+    <div class="sec-head">
+      <span class="eyebrow">Selected Work</span>
+      <h2>Publications &amp; outputs.</h2>
+      <p>Four peer-reviewed publications (2019–2022) in hematology and laboratory science, with current dissertation outputs targeting the Journal of Extracellular Vesicles and AAEV 2026.</p>
+    </div>
+    <div>
+      <div class="pub">
+        <div class="yr">In prep</div>
+        <div>
+          <div class="t">Lineage-specific immunomodulatory cargo of iPSC-derived trophoblast extracellular vesicles</div>
+          <div class="m">Target: Journal of Extracellular Vesicles · AAEV 2026 · BMES 2026 (abstract)</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">In prep</div>
+        <div>
+          <div class="t">Priming-dependent remodeling of mesenchymal stromal cell EV cargo</div>
+          <div class="m">Multi-omics characterization of MSC-EV immunomodulation</div>
+        </div>
+      </div>
+      <div class="pub">
+        <div class="yr">2019–22</div>
+        <div>
+          <div class="t">Four peer-reviewed publications in hematology &amp; medical laboratory science</div>
+          <div class="m">Full list available on Google Scholar / ResearchGate</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CONTACT -->
+<section id="contact" class="contact">
+  <div class="wrap">
+    <span class="eyebrow" style="color:var(--vesicle)">Let's connect</span>
+    <h2>Open to <em>collaboration</em><br>and conversation.</h2>
+    <p>Whether it's extracellular vesicles, reproductive immunology, or engineered stem-cell models — I'd be glad to hear from you.</p>
+    <a href="mailto:your-email@syr.edu" class="mailbtn">Email me</a>
+    <div class="socials">
+      <a href="https://www.linkedin.com/in/susan-moradinasab-1907b0109/" target="_blank" rel="noopener">LinkedIn</a>
+      <a href="https://scholar.google.com/" target="_blank" rel="noopener">Google Scholar</a>
+      <a href="https://www.researchgate.net/" target="_blank" rel="noopener">ResearchGate</a>
+      <a href="https://github.com/susanmoradinasab91" target="_blank" rel="noopener">GitHub</a>
+    </div>
+  </div>
+</section>
+
+<footer class="foot">
+  <div class="wrap">© 2026 Susan Moradinasab · Syracuse University · Built with care.</div>
+</footer>
+
+</body>
+</html>
